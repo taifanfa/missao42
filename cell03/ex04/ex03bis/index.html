@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAREFAS</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; 
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #003d7e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* ESTILO LISTA DE TAREDAS */
+        #ft_list {
+            width: 400px;
+            background-color: #ffffff; 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* ESTILO DA TAREFA */
+        .tarefa {
+            padding: 10px;
+            background-color: #f0f0f0;
+            margin-bottom: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .tarefa:hover {
+            background-color: #d3d3d3;
+        }
+    </style>
+</head>
+<body>
+    <h1>TAREFAS</h1>
+    <button id="addTaskBtn">Adicionar Tarefa</button>
+    <div id="ft_list"></div>
+
+    <script src="modo.js"></script>
+</body>
+</html>

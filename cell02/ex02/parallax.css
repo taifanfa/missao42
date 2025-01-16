@@ -1,0 +1,55 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* FUNDO */
+.parallax {
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#section1 {
+    background-image: url('https://cdnb.artstation.com/p/assets/images/images/014/677/261/large/julien-georgel-as-getjinxed-piltoverglobalview-01.jpg?1544986905');
+}
+
+#section2 {
+    background-image: url('https://cdnb.artstation.com/p/assets/images/images/014/677/269/large/julien-georgel-as-getjinxed-bombride1-camap.jpg?1544986929');
+}
+
+/* ESCRITA CENTRO IMAGEM */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 7px;
+}
+
+/* PRETO FUNDO ESCRITA */
+.message-block {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 500px 0;
+    height: 500px;
+}
+
+/* H2 DENTRO DO FUNDO PRETO */
+.message-block h2 {
+    font-size: 15px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}

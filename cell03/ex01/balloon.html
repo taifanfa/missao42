@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balloon</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    
+    #balao {
+      width: 200px;
+      height: 200px;
+      background-color: red; /* COR INICIAL */
+      border-radius: 50%; /* BORDA ARREDONDADA */
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+    <div id="balao">
+
+        <script>
+            const balao = document.getElementById('balao');
+            let corIndex = 0;
+            let tamanho = 200;
+
+            const cores = ['red', 'green', 'blue']; /* ORDEM DE CORES */
+
+            balao.addEventListener('click', () => {
+            tamanho += 10;
+            if (tamanho > 420) {
+                tamanho = 200; // EXPLODIR E VOLTAR AO INICIO
+            }
+            balao.style.width = `${tamanho}px`;
+            balao.style.height = `${tamanho}px`;
+            balao.style.backgroundColor = cores[corIndex];
+            corIndex = (corIndex + 1) % cores.length;
+            });
+
+            balao.addEventListener('mouseenter', () => {
+            // ENTRADA DO MOUSE - SEM AÇÃO
+            });
+
+            balao.addEventListener('mouseleave', () => {
+            tamanho = Math.max(200, tamanho - 5); // LIMITANDO TAMANHO MÁXIMO
+            balao.style.width = `${tamanho}px`;
+            balao.style.height = `${tamanho}px`;
+
+            // INVERTANDO A MUDANÇA DE COR
+            corIndex = (corIndex - 1 + cores.length) % cores.length;
+            balao.style.backgroundColor = cores[corIndex];
+            });
+        </script>
+    </div> 
+
+</body>
+</html>

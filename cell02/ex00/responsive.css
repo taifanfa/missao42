@@ -1,0 +1,32 @@
+.table {
+    width: 100%;
+    height: 100vh; 
+    border-collapse: collapse;
+    border: 2px solid black; 
+}
+
+td { 
+    width: 20%; 
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid black; 
+    box-sizing: border-box;
+}
+
+.celula1 {
+    background-color: rgb(253, 97, 97);
+}
+.celula2 {
+    background-color: rgb(255, 180, 68);
+}
+.celula3 {
+    background-color: rgb(250, 117, 161);
+}
+.celula4 {
+    background-color: rgb(237, 135, 250);
+}
+.celula5 {
+    background-color: rgb(218, 98, 255);
+}
