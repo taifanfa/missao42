@@ -9,11 +9,9 @@ function loadTasks() {
 
 // SALVAR AS TAREFAS NOS COOKIES
 function saveTasks() {
-    const taskElements = document.querySelectorAll('.tarefa');
-    const tasks = [];
-    taskElements.forEach(task => {
-        tasks.push(task.textContent);
-    });
+    const tasks = $('.tarefa').map(function() {
+        return $(this).text();
+    }).get();
     setCookie('tasks', JSON.stringify(tasks), 7); // CONDIÇÃO - SALVA POR 7 DIAS
 }
 
@@ -35,17 +33,14 @@ function setCookie(name, value, days) {
 
 // ADICIONAR TAREFA NO DOM
 function addTaskToDOM(task) {
-    const taskDiv = document.createElement('div');
-    taskDiv.classList.add('tarefa');
-    taskDiv.textContent = task;
-    taskDiv.onclick = function() {
+    const taskDiv = $('<div>').addClass('tarefa').text(task);
+    taskDiv.on('click', function() {
         if (confirm('Deseja remover esta tarefa?')) {
-            taskDiv.remove();
+            $(this).remove();
             saveTasks();
         }
-    };
-    const taskList = document.getElementById('ft_list');
-    taskList.insertBefore(taskDiv, taskList.firstChild); // ADICIONA AO TOPO
+    });
+    $('#ft_list').prepend(taskDiv); // ADICIONA AO TOPO
 }
 
 // ADICIONAR UMA NOVA TAREFA
@@ -60,7 +55,20 @@ function addNewTask() {
 }
 
 // BOTÃO
-document.getElementById('addTaskBtn').onclick = addNewTask;
+$(document).ready(function() {
+    $('#addTaskBtn').on('click', addNewTask);
+});
 
 // CARREGAR TAREFAS AO CARRECAR PÁGINA
-loadTasks();
+$(document).ready(function() {
+    loadTasks();
+});
+
+// document.querySelectorAll() -> $('.tarefa')
+// document.createElement() -> $('<div>')
+// classList.add() -> addClass()
+// textContent -> text()
+// onclick -> on('click')
+// insertBefore() -> prepend()
+// remove() foi mantido, pois já é compatível com jQuery
+// document.getElementById('addTaskBtn').onclick -> $(document).ready()

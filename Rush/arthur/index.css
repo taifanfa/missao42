@@ -1,0 +1,173 @@
+/* Resetando margens e padding */
+
+html {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.menu li {
+    margin: 0 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.menu a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+section {
+    padding: 80px 20px;
+}
+
+section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.aling-img {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+    margin-bottom: 20px; 
+}
+
+.tamanho-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out; 
+}
+
+.tamanho-img:hover {
+    transform: scale(1.05); 
+}
+
+.descricao {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.apresentacao {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #555; 
+}
+
+.aling-card{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+.card {
+    width: 350px;
+    margin: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    padding: 20px;
+
+}
+
+.tamanho-img-react {
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.tamanho-img-node{
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.tamanho-img-react:hover {
+    transform: scale(1.05); 
+}
+
+.contato {
+    display: flex;
+    justify-content: space-around;
+}
+
+.aling-contato{
+    flex-direction: column;
+    display: flex;    
+    align-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.car-contato{
+    width: 400px;
+}
+
+.aling-link a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .aling-img {
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .tamanho-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .descricao {
+        margin-top: 10px;
+    }
+}

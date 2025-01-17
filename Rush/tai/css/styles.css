@@ -1,0 +1,218 @@
+/* MENU FIXO */
+body {
+    background-color: #e9e9e9;
+    margin: 0;
+    padding: 0;
+}
+
+#menu {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 80px;
+    background-color: transparent;
+    padding-top: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#menu a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 24px;
+    display: block;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* DEIXAR ICONES REDONDOS */
+#menu a:hover {
+    background-color: #adadad;
+    transform: scale(1);
+}
+
+/* MOUSE - TEXTO - ICONE */
+#menu .menu-text {
+    display: none;
+    position: absolute;
+    left: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    background-color: #adadad;
+    padding: 10px 15px;
+    border-radius: 5px;
+    pointer-events: none;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+/* EXIBIR TEXTO NO MENU - HOVER */
+#menu a:hover .menu-text {
+    display: inline-block;
+    opacity: 1;
+}
+
+/* FONTE ICONE */
+#menu i {
+    font-size: 24px;
+}
+
+/* SOBRE MIM */
+#about {
+    padding: 50px 20px;
+    background-color: #ebebeb;
+    color: rgb(0, 0, 0);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* CONTAINER PERFIL */
+#about .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* FOTO PERFIL */
+#about .container img {
+    width: 220px; 
+    height: 220px;
+    border-radius: 50%; 
+    object-fit: cover; /* NÃO DISTORCER */
+    border: 4px solid #ffffff; /* BORDA */
+}
+
+/* TITULOS E PARAGRAFOS */
+#about h1 {
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+#about p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-top: 10px;
+}
+
+/* SKILLS & XP */
+#skills {
+    background-color: #d0d0d0;
+    padding: 50px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+}
+
+.skills-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.skills-icons .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+}
+
+.skills-icons i {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* CONTATO */
+.contact {
+    background-color: #ebebeb;
+    padding: 50px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+}
+
+/* CARD DE CONTATO */
+.contact-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+/* ROLAGEM SUAVE */
+html {
+    scroll-behavior: smooth;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    #menu {
+        width: 70px;
+    }
+
+    #menu a {
+        padding: 10px;
+        font-size: 20px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .skills,
+    .about {
+        padding: 80px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about h1 {
+        font-size: 1.8rem;
+    }
+
+    .about p {
+        font-size: 1rem;
+    }
+}

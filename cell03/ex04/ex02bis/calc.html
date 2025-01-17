@@ -6,90 +6,81 @@
     <title>Calculadora Básica</title>
 </head>
 <body>
-  
+    <input type="text" id="input1" placeholder="Membro esquerdo" />
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input type="text" id="input2" placeholder="Membro direito" />
+    <input type="submit" value="Try me!" id="botaoCalcular" />
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#botaoCalcular').click(function() {
+                var input1 = $('#input1').val();
+                var input2 = $('#input2').val();
+                var operator = $('#operator').val();
+
+                if (!isPositiveInteger(input1) || !isPositiveInteger(input2)) {
+                    alert('Erro! :(');
+                    return;
+                }
+
+                var num1 = parseInt(input1);
+                var num2 = parseInt(input2);
+                var result;
+
+                if ((operator === '/' || operator === '%') && num2 === 0) {
+                    alert("It’s over 9000!");
+                    console.log("It’s over 9000!");
+                    return;
+                }
+
+                switch (operator) {
+                    case '+':
+                        result = num1 + num2;
+                        break;
+                    case '-':
+                        result = num1 - num2;
+                        break;
+                    case '*':
+                        result = num1 * num2;
+                        break;
+                    case '/':
+                        result = num1 / num2;
+                        break;
+                    case '%':
+                        result = num1 % num2;
+                        break;
+                    default:
+                        alert('Erro!');
+                        return;
+                }
+
+                alert('Resultado: ' + result);
+                console.log('Resultado: ' + result);
+            });
+
+            function isPositiveInteger(value) {
+                var number = parseInt(value);
+                return !isNaN(number) && number >= 0 && number === Number(value);
+            }
+
+            setInterval(function() {
+                alert("Please, use me!");
+            }, 30000);
+        });
+
+        // Inclui tag <script> para incluir a biblioteca jQuery
+        // document.getElementById() -> $('#id')
+        // value -> val()
+        // onclick -> $('#botaoCalcular').click()
+        // Envolvemos o código em $(document).ready() para garantir que o código seja executado após o carregamento da página.
+
+    </script>
 </body>
-
-<!-- TEXT INPUT - MEMBRO ESQUERDO -->
-<input type="text" id="input1" placeholder="Membro esquerdo" />
-
-<!-- SELECT - OPERADORES -->
-<select id="operator">
-    <option value="+">+</option>
-    <option value="-">-</option>
-    <option value="*">*</option>
-    <option value="/">/</option>
-    <option value="%">%</option>
-</select>
-
-<!-- TEXT INPUT - MEMBRO DIREITO -->
-<input type="text" id="input2" placeholder="Membro direito" />
-
-<!-- BOTÃO - TRY ME! -->
-<input type="submit" value="Try me!" onclick="calculate()">
-
-<script>
-    // CALCULAR E EXIBIR RESULTADO
-    function calculate() {
-        // OBTER VALORES DOS CAMPOS
-        var input1 = document.getElementById('input1').value;
-        var input2 = document.getElementById('input2').value;
-        var operator = document.getElementById('operator').value;
-
-        // VERIFICA SE SÃO NÚMEROS INTEIROS E POSITIVOS
-        if (!isPositiveInteger(input1) || !isPositiveInteger(input2)) {
-            alert('Error :(');
-            return; // SE NÃO FOR INTEIRO OU POSITIVO, RETORNA "ERROR :("
-        }
-
-        var num1 = parseInt(input1);
-        var num2 = parseInt(input2);
-        var result; // SE FOR INTEIRO E POSITIVO - RETORNA O RESULTADO
-
-        // DIVISÃO POR ZERO OU MÓDULO DE ZERO = "ITS OVER 9000"
-        if ((operator === '/' || operator === '%') && num2 === 0) {
-            alert("It’s over 9000!");
-            console.log("It’s over 9000!");
-            return;
-        }
-
-        // CALCULO
-        switch (operator) {
-            case '+':
-                result = num1 + num2;
-                break;
-            case '-':
-                result = num1 - num2;
-                break;
-            case '*':
-                result = num1 * num2;
-                break;
-            case '/':
-                result = num1 / num2;
-                break;
-            case '%':
-                result = num1 % num2;
-                break;
-            default:
-                alert('Error :('); // MENSAGEM DE ERRO SETADA PARA NÚMEROS QUE NÃO SÃO INTEIROS OU POSITIVOS
-                return;
-        }
-
-        // RESULTADO NO CONSOLE 
-        alert('Resultado: ' + result);
-        console.log('Resultado: ' + result);
-    }
-
-    // VERIFICA SE O NÚMERO É INTEIRO E POSITIVO
-    function isPositiveInteger(value) {
-        var number = parseInt(value);
-        return !isNaN(number) && number >= 0 && number === Number(value); }
-
-    // POP UP A CADA 30 SEGUNDOS - "PLEASE, USE ME"
-    setInterval(function() {
-        alert("Please, use me");
-    }, 30000);
-
-</script>
-
 </html>
